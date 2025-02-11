@@ -1,602 +1,225 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hezekiah Olawale Ojenike | Portfolio</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-  <style>
-    /* Portfolio UI Enhancements */
-    body {
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      margin: 0;
-      padding: 0;
-      background-color: #f4f4f9;
-      color: #333;
-      box-sizing: border-box;
-    }
-
-    /* Header Navigation */
-    /* Animated Gradient Background for Header */
-@keyframes gradientBG {
-  0% { background: linear-gradient(to right, #2c3e50, #3498db); }
-  50% { background: linear-gradient(to right, #1a1f29, #1e5799); }
-  100% { background: linear-gradient(to right, #2c3e50, #3498db); }
-}
-
-nav {
-  position: fixed;
-  width: 100%;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 15px 20px;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-  z-index: 1000;
-  animation: gradientBG 8s infinite alternate;
-  transition: background 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-}
-
-/* Change background when scrolling */
-nav.scrolled {
-  background: rgba(26, 31, 41, 0.95);
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-}
-
-/* Logo Animation */
-nav a.logo {
-  font-size: 1.8rem;
-  font-weight: bold;
-  text-decoration: none;
-  color: white;
-  transition: transform 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
-  text-shadow: 0 0 5px rgba(255, 255, 255, 0.6);
-}
-
-nav a.logo:hover {
-  transform: scale(1.1);
-  text-shadow: 0 0 15px rgba(255, 255, 255, 0.9);
-}
-
-/* Navigation Links */
-nav ul {
-  display: flex;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-nav ul li {
-  margin: 0 15px;
-}
-
-/* Smooth Hover Underline Effect */
-nav ul li a {
-  position: relative;
-  text-decoration: none;
-  font-size: 1.1rem;
-  color: white;
-  padding: 10px;
-  border-radius: 5px;
-  transition: transform 0.3s ease-in-out;
-}
-
-nav ul li a::after {
-  content: "";
-  position: absolute;
-  left: 50%;
-  bottom: -5px;
-  width: 0;
-  height: 3px;
-  background: white;
-  transition: all 0.3s ease-in-out;
-}
-
-nav ul li a:hover::after {
-  width: 100%;
-  left: 0;
-}
-
-nav ul li a:hover {
-  transform: scale(1.1);
-}
-
-
-    /* Mobile Menu (Optional) */
-    .menu-toggle {
-      display: none;
-      font-size: 1.8rem;
-      color: white;
-      cursor: pointer;
-    }
-
-    @media (max-width: 768px) {
-      nav ul {
-        display: none;
-        flex-direction: column;
-        background: #2c3e50;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        width: 100%;
-        padding: 20px;
-        text-align: center;
-      }
-
-      nav ul.open {
-        display: flex;
-      }
-
-      .menu-toggle {
-        display: block;
-      }
-    }
-
-
-    /* Container */
-    .container {
-      max-width: 1200px;
-      margin: 0 auto;
-      padding: 40px 20px;
-    }
-
-    /* Hero Section */
-    .hero {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 45px;
-      text-align: center;
-      background: linear-gradient(to right, #2c3e50, #3498db);
-      color: white;
-      padding: 50px 110px;
-      border-radius: 10px;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-      margin-top: 50px;
-    }
-
-    .hero img {
-      border-radius: 10px;
-      width: 400px;
-      margin: 0 10px;
-    }
-
-    .hero .headline {
-      margin-left: 0;
-    }
-
-    .hero h1 {
-      font-size: 3.5rem;
-      margin: 0;
-      letter-spacing: 1px;
-    }
-
-    .hero p {
-      font-size: 1.3rem;
-      margin-top: 10px;
-      font-weight: 300;
-    }
-
-    /* About Section */
-    .about {
-      background-color: #ffffff;
-      padding: 50px 20px;
-      border-radius: 10px;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-      margin-top: 40px;
-    }
-
-    .about h2 {
-      font-size: 2.5rem;
-      color: #2c3e50;
-    }
-
-    .about p {
-      font-size: 1.1rem;
-      line-height: 1.6;
-      color: #555;
-    }
-
-    /* Skills Section */
-    .skills {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      margin-top: 40px;
-    }
-
-    .skill-card {
-      background-color: #ffffff;
-      border-radius: 8px;
-      padding: 20px;
-      margin: 10px;
-      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-      text-align: center;
-      width: 180px;
-      transition: transform 0.3s ease-in-out;
-    }
-
-    .skill-card:hover {
-      transform: translateY(-5px);
-    }
-
-    .skill-card h3 {
-      font-size: 1.2rem;
-      color: #2c3e50;
-    }
-
-    .skill-card p {
-      font-size: 1rem;
-      color: #7f8c8d;
-      margin-top: 10px;
-    }
-
-    /* Responsive Styles */
-
-    @media (min-width: 768px) {
-      .hero h1 {
-        font-size: 2.5rem;
-      }
-
-      .about h2 {
-        text-align: center;
-        font-size: 2rem;
-      }
-    
-    }
-
-
-    @media (max-width: 768px) {
-      .hero {
-        flex-direction: column;
-      }
-      .hero h1 {
-        font-size: 2.5rem;
-      }
-
-      .about h2 {
-        text-align: center;
-        font-size: 2rem;
-      }
-
-      .skills {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .skill-card {
-        width: 250px;
-      }
-    }
-
-    /* Contact Section */
-    .contact {
-      background: linear-gradient(to right, #3498db, #2c3e50);
-      color: white;
-      padding: 50px 20px;
-      border-radius: 10px;
-      box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
-      margin-top: 40px;
-      text-align: center;
-    }
-
-    .contact h2 {
-      font-size: 2.5rem;
-      margin-bottom: 20px;
-    }
-
-    .contact p {
-      font-size: 1.2rem;
-      margin-bottom: 20px;
-    }
-
-    .contact-icons {
-      display: flex;
-      justify-content: center;
-      gap: 20px;
-      margin-bottom: 20px;
-    }
-
-    .contact-icons a {
-      font-size: 1.8rem;
-      color: white;
-      transition: transform 0.3s ease-in-out;
-    }
-
-    .contact-icons a:hover {
-      transform: scale(1.2);
-      color: #f1c40f;
-    }
-
-    /* Contact Form */
-    .contact-form {
-      max-width: 500px;
-      margin: 0 auto;
-      display: flex;
-      flex-direction: column;
-      gap: 15px;
-    }
-
-    .contact-form input,
-    .contact-form textarea {
-      width: 100%;
-      padding: 12px;
-      border: none;
-      border-radius: 5px;
-      font-size: 1rem;
-      transition: box-shadow 0.3s ease-in-out;
-    }
-
-    .contact-form input:focus,
-    .contact-form textarea:focus {
-      box-shadow: 0 0 10px rgba(255, 255, 255, 0.8);
-      outline: none;
-    }
-
-    .contact-form button {
-      background-color: #f1c40f;
-      color: #333;
-      border: none;
-      padding: 12px;
-      font-size: 1.2rem;
-      border-radius: 5px;
-      cursor: pointer;
-      transition: background 0.3s ease-in-out, transform 0.2s ease-in-out;
-    }
-
-    .contact-form button:hover {
-      background-color: #d4ac0d;
-      transform: scale(1.05);
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .contact h2 {
-        font-size: 2rem;
-      }
-    }
-
-    /* Footer Styles */
-    footer {
-      background: linear-gradient(to right, #2c3e50, #3498db);
-      color: white;
-      text-align: center;
-      padding: 20px 10px;
-      font-size: 1.2rem;
-      position: relative;
-      margin-top: 40px;
-    }
-
-    .footer-content {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .footer-icons {
-      margin: 10px 0;
-    }
-
-    .footer-icons a {
-      font-size: 1.8rem;
-      color: white;
-      margin: 0 10px;
-      transition: transform 0.3s ease-in-out, color 0.3s;
-    }
-
-    .footer-icons a:hover {
-      transform: scale(1.3);
-      color: #25D366; /* WhatsApp Green */
-    }
-
-    /* Footer Glow Animation */
-    @keyframes glow {
-      0% {
-        text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
-      }
-      50% {
-        text-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
-      }
-      100% {
-        text-shadow: 0 0 5px rgba(255, 255, 255, 0.3);
-      }
-    }
-
-    .footer-text {
-      animation: glow 2s infinite alternate;
-      font-weight: bold;
-    }
-
-
-
-  </style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfolio of Hezekiah Olawale Ojenike - Full-Stack Web Developer, Data Scientist, and Software Developer.">
+    <meta name="keywords" content="Web Developer, Data Scientist, Software Developer, Portfolio, Hezekiah Olawale Ojenike">
+    <meta name="author" content="Hezekiah Olawale Ojenike">
+    <meta property="og:title" content="Hezekiah Olawale Ojenike | Portfolio">
+    <meta property="og:description" content="Portfolio of Hezekiah Olawale Ojenike - Full-Stack Web Developer, Data Scientist, and Software Developer.">
+    <meta property="og:image" content="https://profhezzy.github.io/hezekiahonline/Passport1.jpg">
+    <meta property="og:url" content="https://profhezzy.github.io/hezekiahonline">
+    <title>Hezekiah Olawale Ojenike | Portfolio</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
 </head>
+
 <body>
-  <nav>
-    <a href="#home" class="logo">Prof. Hezzy</a>
-    <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-    <ul>
-      <li><a href="#home">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#skills">Skills</a></li>
-      <li><a href="#contact">Contact</a></li>
-    </ul>
-  </nav>
-  
-  <div class="container">
-    <!-- Hero Section -->
-    <section class="hero" id="home">
-      <img src="Passport1.jpg" alt="">
-      <div class="headline">
-        <h1>Hezekiah Olawale Ojenike</h1>
-        <p>Full-Stack Web Developer | Data Scientist | Software Developer | Database Engineer | Prompt Engineer</p>
-      </div>
-    </section>
+    <nav>
+        <a href="#home" class="logo">Prof. Hezzy</a>
+        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#contact">Contact</a></li>
+            <li><a href="#projects">Projects</a></li>
+        </ul>
+    </nav>
 
-    <!-- About Me Section -->
-    <section class="about" id="about">
-      <h2>About Me</h2>
-      <p>I am a passionate Web Developer with expertise in both front-end and back-end technologies. I specialize in HTML5, CSS3, JavaScript, PHP, and Python, and I am proficient in database management using MySQL. Additionally, I have experience in data science using Python and Microsoft Excel, as well as prompt engineering. I am always looking to grow, learn new skills, and take on exciting challenges.</p>
-    </section>
+    <div class="container">
+        <section class="hero" id="home">
+            <img src="Passport1.jpg" alt="Your Profile Picture">
+            <div class="headline">
+                <h1>Hezekiah Olawale Ojenike</h1>
+                <p>Full-Stack Web Developer | Data Scientist | Software Developer | Database Engineer | Prompt Engineer
+                </p>
+            </div>
+        </section>
 
-    <!-- Skills Section -->
-    <section class="skills" id="skills">
-      <div class="skill-card">
-          <h3>HTML5</h3>
-          <p>Developing structured and semantic web pages with modern HTML5 elements, ensuring accessibility, performance, and responsiveness for a seamless user experience.</p>
-      </div>
-      <div class="skill-card">
-          <h3>CSS3</h3>
-          <p>Designing visually appealing and responsive web interfaces with CSS3, leveraging modern techniques such as Flexbox, Grid, animations, and transitions for an enhanced user experience.</p>
-      </div>
-      <div class="skill-card">
-          <h3>JavaScript</h3>
-          <p>Implementing dynamic and interactive functionalities on web pages using JavaScript, including DOM manipulation, event handling, and asynchronous operations for smooth performance.</p>
-      </div>
-      <div class="skill-card">
-          <h3>Bootstrap Framework</h3>
-          <p>Rapidly developing responsive and mobile-first websites using Bootstrap’s prebuilt components, grid system, and customization options to create consistent and professional designs.</p>
-      </div>
-      <div class="skill-card">
-          <h3>Django</h3>
-          <p>Building robust, scalable, and secure web applications using Django, a high-level Python web framework that promotes clean code, modularity, and rapid development.</p>
-      </div>
-      <div class="skill-card">
-          <h3>PHP</h3>
-          <p>Creating dynamic and interactive web applications using PHP, enabling efficient server-side scripting, database interactions, and backend logic for seamless functionality.</p>
-      </div>
-      <div class="skill-card">
-          <h3>Python</h3>
-          <p>Writing efficient, scalable, and versatile code with Python, applying it to web development, automation, data analysis, and artificial intelligence applications.</p>
-      </div>
-      <div class="skill-card">
-          <h3>MySQL</h3>
-          <p>Designing and managing relational databases using MySQL, ensuring data integrity, optimized queries, and seamless integration with web applications for efficient storage and retrieval.</p>
-      </div>
-      <div class="skill-card">
-          <h3>AJAX</h3>
-          <p>Enhancing web applications with AJAX (Asynchronous JavaScript and XML), allowing real-time data updates and smooth interactions without requiring full-page reloads.</p>
-      </div>
-      <div class="skill-card">
-          <h3>MS Excel</h3>
-          <p>Leveraging Microsoft Excel for data analysis, visualization, and automation using formulas, pivot tables, and advanced functions to streamline business operations and decision-making.</p>
-      </div>
-    </section>
-  
-  </div>
+        <section class="about" id="about">
+            <h2>About Me</h2>
+            <p>I am a passionate Web Developer with expertise in both front-end and back-end technologies. I specialize
+                in HTML5, CSS3, JavaScript, PHP, and Python, and I am proficient in database management using MySQL.
+                Additionally, I have experience in data science using Python and Microsoft Excel, as well as prompt
+                engineering. I am always looking to grow, learn new skills, and take on exciting challenges.</p>
+        </section>
 
-  <!-- Contact Section -->
-  <section class="contact" id="contact">
-    <h2>Contact Me</h2>
-    <p>Let's connect! Feel free to reach out for collaborations, job opportunities, or any inquiries.</p>
+        <!-- Skills Section -->
+        <section class="skills" id="skills">
+            <div class="skill-card">
+                <h3>HTML5</h3>
+                <p>Developing structured and semantic web pages with modern HTML5 elements, ensuring accessibility,
+                    performance, and responsiveness for a seamless user experience.</p>
+            </div>
+            <div class="skill-card">
+                <h3>CSS3</h3>
+                <p>Designing visually appealing and responsive web interfaces with CSS3, leveraging modern techniques
+                    such as Flexbox, Grid, animations, and transitions for an enhanced user experience.</p>
+            </div>
+            <div class="skill-card">
+                <h3>JavaScript</h3>
+                <p>Implementing dynamic and interactive functionalities on web pages using JavaScript, including DOM
+                    manipulation, event handling, and asynchronous operations for smooth performance.</p>
+            </div>
+            <div class="skill-card">
+                <h3>Bootstrap Framework</h3>
+                <p>Rapidly developing responsive and mobile-first websites using Bootstrap’s prebuilt components, grid
+                    system, and customization options to create consistent and professional designs.</p>
+            </div>
+            <div class="skill-card">
+                <h3>Django</h3>
+                <p>Building robust, scalable, and secure web applications using Django, a high-level Python web
+                    framework that promotes clean code, modularity, and rapid development.</p>
+            </div>
+            <div class="skill-card">
+                <h3>PHP</h3>
+                <p>Creating dynamic and interactive web applications using PHP, enabling efficient server-side
+                    scripting, database interactions, and backend logic for seamless functionality.</p>
+            </div>
+            <div class="skill-card">
+                <h3>Python</h3>
+                <p>Writing efficient, scalable, and versatile code with Python, applying it to web development,
+                    automation, data analysis, and artificial intelligence applications.</p>
+            </div>
+            <div class="skill-card">
+                <h3>MySQL</h3>
+                <p>Designing and managing relational databases using MySQL, ensuring data integrity, optimized queries,
+                    and seamless integration with web applications for efficient storage and retrieval.</p>
+            </div>
+            <div class="skill-card">
+                <h3>AJAX</h3>
+                <p>Enhancing web applications with AJAX (Asynchronous JavaScript and XML), allowing real-time data
+                    updates and smooth interactions without requiring full-page reloads.</p>
+            </div>
+            <div class="skill-card">
+                <h3>MS Excel</h3>
+                <p>Leveraging Microsoft Excel for data analysis, visualization, and automation using formulas, pivot
+                    tables, and advanced functions to streamline business operations and decision-making.</p>
+            </div>
+        </section>
 
-    <!-- Contact Icons -->
-    <div class="contact-icons">
-      <a href="mailto:hezekiahonlie94@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
-      <a href="https://linkedin.com/in/profhezzy" target="_blank"><i class="fab fa-linkedin"></i></a>
-      <a href="https://github.com/ProfHezzy" target="_blank"><i class="fab fa-github"></i></a>
-      <a href="https://wa.me/2348140272765" target="_blank"><i class="fab fa-whatsapp"></i></a>
+        <section class="projects" id="projects">
+            <h2>Projects</h2>
+            <div class="project-grid">
+
+                <div class="project-card">
+                    <img class="project-image" src="project1.jpg" alt="Project 1">
+                    <div class="project-details">
+                        <h3 class="project-title">Blog</h3>
+                        <p class="project-description">A Blog design with HTML, CSS, JavaScript, PHP, Ajax, and MySQL
+                            where users can register as either a moderator or ordinary user. A moderator can login to
+                            their profile and make a post on either Sports, TECH, Education, etc and also moderate a
+                            post. while an ordinary users can only register and view post, like and comment on a post
+                            made by moderators.</p>
+                        <div class="project-links">
+                            <a href="#" target="_blank">Live Demo</a> <a href="github.com/ProfHezzy/HezzyBlog"
+                                target="_blank">GitHub Repo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img class="project-image" src="project2.jpg" alt="Project 2">
+                    <div class="project-details">
+                        <h3 class="project-title">Social Media System</h3>
+                        <p class="project-description">A Social Media System design with HTML, CSS, JavaScript, PHP, Ajax, and MySQL
+                            where users can register and log-in to their profile, Search a user by either the useeeers username or phone number and chat with the user.</p>
+                        <div class="project-links">
+                            <a href="#" target="_blank">Live Demo</a> <a href="github.com/ProfHezzy/SocialMediaSystem"
+                                target="_blank">GitHub Repo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img class="project-image" src="project3.jpg" alt="Project 3">
+                    <div class="project-details">
+                        <h3 class="project-title">Project Title 3</h3>
+                        <p class="project-description">A Blog design with HTML, CSS, JavaScript, PHP, Ajax, and MySQL
+                            where users can register as either a moderator or ordinary user. A moderator can login to
+                            their profile and make a post on either Sports, TECH, Education, etc and also moderate a
+                            post. while an ordinary users can only register and view post, like and comment on a post
+                            made by moderators.</p>
+                        <div class="project-links">
+                            <a href="#" target="_blank">Live Demo</a> <a href="#" target="_blank">GitHub Repo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img class="project-image" src="project1.jpg" alt="Project 1">
+                    <div class="project-details">
+                        <h3 class="project-title">Blog</h3>
+                        <p class="project-description">Short description of project 1. Mention key technologies and
+                            accomplishments.</p>
+                        <div class="project-links">
+                            <a href="#" target="_blank">Live Demo</a> <a href="#" target="_blank">GitHub Repo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img class="project-image" src="project2.jpg" alt="Project 2">
+                    <div class="project-details">
+                        <h3 class="project-title">Socil Media System</h3>
+                        <p class="project-description">Short description of project 2. Highlight the challenges and
+                            solutions.</p>
+                        <div class="project-links">
+                            <a href="#" target="_blank">Live Demo</a> <a href="#" target="_blank">GitHub Repo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <img class="project-image" src="project3.jpg" alt="Project 3">
+                    <div class="project-details">
+                        <h3 class="project-title">Project Title 3</h3>
+                        <p class="project-description">Short description of project 3. Focus on the impact and results.
+                        </p>
+                        <div class="project-links">
+                            <a href="#" target="_blank">Live Demo</a> <a href="#" target="_blank">GitHub Repo</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="contact" id="contact">
+            <h2>Contact Me</h2>
+            <p>Let's connect! Feel free to reach out for collaborations, job opportunities, or any inquiries.</p>
+
+            <div class="contact-icons">
+            </div>
+
+            <form class="contact-form" id="contactForm">
+                <div id="formStatus" class="form-status"></div>
+                <input type="text" id="name" placeholder="Your Name" required>
+                <input type="email" id="email" placeholder="Your Email" required>
+                <textarea id="message" rows="4" placeholder="Your Message" required></textarea>
+                <button type="submit" id="submitBtn">
+                    <i class="fas fa-spinner spinner" style="display: none;"></i>
+                    <span>Send Message</span>
+                </button>
+            </form>
+        </section>
     </div>
 
-    <!-- Contact Form -->
-    <form class="contact-form">
-      <input type="text" placeholder="Your Name" required>
-      <input type="email" placeholder="Your Email" required>
-      <textarea rows="4" placeholder="Your Message" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </section>
+    <footer>
+        <div class="footer-content">
+            <p class="footer-text">© 2025 Hezekiah Olawale Ojenike. All Rights Reserved.</p>
+            <div class="footer-icons">
+                <a href="mailto:hezekiahonlie94@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+                <a href="https://linkedin.com/in/profhezzy" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="https://github.com/ProfHezzy" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://wa.me/2348140272765" target="_blank"><i class="fab fa-whatsapp"></i></a>
+            </div>
+        </div>
+    </footer>
 
-  <footer>
-    <div class="footer-content">
-      <p class="footer-text">© 2025 Hezekiah Olawale Ojenike. All Rights Reserved.</p>
-      <div class="footer-icons">
-        <a href="mailto:hezekiahonlie94@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
-        <a href="https://linkedin.com/in/profhezzy" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="https://github.com/ProfHezzy" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://wa.me/2348140272765" target="_blank"><i class="fab fa-whatsapp"></i></a>
-      </div>
-    </div>
-  </footer>
-  
-  <script>
-    // Toggle mobile menu
-    function toggleMenu() {
-      document.querySelector("nav ul").classList.toggle("open");
-    }
-
-    // Change header on scroll
-    window.addEventListener("scroll", function () {
-      const nav = document.querySelector("nav");
-      if (window.scrollY > 50) {
-        nav.classList.add("scrolled");
-      } else {
-        nav.classList.remove("scrolled");
-      }
-    });
-
-    document.addEventListener("DOMContentLoaded", function () {
-    // Smooth scrolling for navigation links
-    document.querySelectorAll("a[href^='#']").forEach(anchor => {
-        anchor.addEventListener("click", function (e) {
-            e.preventDefault();
-            const targetId = this.getAttribute("href").substring(1);
-            const targetElement = document.getElementById(targetId);
-            
-            if (targetElement) {
-                window.scrollTo({
-                    top: targetElement.offsetTop,
-                    behavior: "smooth"
-                });
-            }
-        });
-    });
-
-    // Smooth scrolling for navigation links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function (e) {
-        e.preventDefault();
-        const targetId = this.getAttribute('href').substring(1);
-        const targetElement = document.getElementById(targetId);
-        if (targetElement) {
-            window.scrollTo({
-                top: targetElement.offsetTop,
-                behavior: 'smooth'
-            });
-        }
-    });
-});
-
-// Form validation and submission handling
-document.getElementById('contactForm').addEventListener('submit', function (e) {
-    e.preventDefault(); // Prevent the default form submission
-    
-    const name = document.getElementById('name').value.trim();
-    const email = document.getElementById('email').value.trim();
-    const message = document.getElementById('message').value.trim();
-    
-    if (name === '' || email === '' || message === '') {
-        alert('Please fill in all fields.');
-        return;
-    }
-    
-    // Basic email validation
-    const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    if (!emailPattern.test(email)) {
-        alert('Please enter a valid email address.');
-        return;
-    }
-    
-    alert('Form submitted successfully!');
-    this.reset(); // Reset the form fields after submission
-});
-
-
-
-    
-
-  </script>
+    <script src="script.js"></script>
 </body>
+
 </html>
