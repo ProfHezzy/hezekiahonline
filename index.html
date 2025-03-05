@@ -2,30 +2,24 @@
 <html lang="en">
 
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfolio of Hezekiah Olawale Ojenike - Full-Stack Web Developer, Data Scientist, and Software Developer.">
-    <meta name="keywords" content="Web Developer, Data Scientist, Software Developer, Portfolio, Hezekiah Olawale Ojenike">
-    <meta name="author" content="Hezekiah Olawale Ojenike">
-    <meta property="og:title" content="Hezekiah Olawale Ojenike | Portfolio">
-    <meta property="og:description" content="Portfolio of Hezekiah Olawale Ojenike - Full-Stack Web Developer, Data Scientist, and Software Developer.">
-    <meta property="og:image" content="https://profhezzy.github.io/hezekiahonline/Passport1.jpg">
-    <meta property="og:url" content="https://profhezzy.github.io/hezekiahonline">
-    <title>Hezekiah Olawale Ojenike | Portfolio</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
-    <link rel="stylesheet" href="style.css">
-</head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css">
+    <link rel="stylesheet" href="style.css"> </head>
 
 <body>
     <nav>
         <a href="#home" class="logo">Prof. Hezzy</a>
-        <div class="menu-toggle" onclick="toggleMenu()">☰</div>
-        <ul>
+        <div class="menu-toggle">&#9776;</div> <!-- Mobile menu button -->
+        <ul class="nav-links">
             <li><a href="#home">Home</a></li>
+            <li><a href="blog.php">Blog</a></li>
             <li><a href="#about">About</a></li>
+            <li><a href="#education">Education</a></li>
+            <li><a href="#certifications">Certifications</a></li>
+            <li><a href="#experience">Experience</a></li>
             <li><a href="#skills">Skills</a></li>
-            <li><a href="#contact">Contact</a></li>
             <li><a href="#projects">Projects</a></li>
+            <li><a href="#contact">Contact</a></li>
         </ul>
     </nav>
 
@@ -47,57 +41,152 @@
                 engineering. I am always looking to grow, learn new skills, and take on exciting challenges.</p>
         </section>
 
-        <!-- Skills Section -->
+        <section class="education" id="education">
+            <h2>Education</h2>
+            <div class="education-grid">  <div class="education-card">
+                    <h3>Higher National Diploma (HND)</h3>
+                    <p>Ronik Polytechnic</p>
+                    <p>2019 - 2021</p>
+                    <p>Computer Science</p>
+                </div>
+                <div class="education-card">
+                    <h3>National Diploma (ND)</h3>
+                    <p>Ronik Polytechnic</p>
+                    <p>2017 - 2019</p>
+                    <p>Computer Science</p>
+                </div>
+            </div>
+            
+        </section>
+        
+        <section class="certifications" id="certifications">
+            <h2>Certifications</h2>
+            <div class="certifications-grid">
+                <div class="certification-card">
+                    <h3>AI Career Essentials</h3>
+                    <p>2021</p>
+                    <p>Alx</p>
+                </div>
+                <div class="certification-card">
+                    <h3>Data Science</h3>
+                    <p>2020</p>
+                    <p>Coursera</p>
+                </div>
+                <div class="certification-card">
+                    <h3>PHP & MySQL</h3>
+                    <p>2019</p>
+                    <p>Udemy</p>
+                </div>
+                <div class="certification-card">
+                    <h3>JavaScript</h3>
+                    <p>2017</p>
+                    <p>Udemy</p>
+                </div>
+                <div class="certification-card">
+                    <h3>Python TKinter (GUI)</h3>
+                    <p>2017</p>
+                    <p>Edx</p>
+                </div>
+                <div class="certification-card">
+                    <h3>Python</h3>
+                    <p>2017</p>
+                    <p>Edx</p>
+                </div>
+            </div>
+        </section>
+        
+        <section class="experience" id="experience">
+            <h2>Experience</h2>
+            <div class="experience-grid">
+                <div class="experience-card">
+                    <h3>Web Developer</h3>
+                    <p>2021 - Present</p>
+                    <p>Developed and maintained websites for various clients, ensuring optimal functionality and user
+                        experience. Collaborated with designers and back-end developers to improve usability and
+                        performance.
+                    </p>
+                </div>
+                <div class="experience-card">
+                    <h3>Data Scientist</h3>
+                    <p>2020 - 2021</p>
+                    <p>Utilized Python and Microsoft Excel to analyze and interpret data, providing valuable insights
+                        and recommendations to stakeholders. Developed data visualizations and reports to communicate
+                        findings effectively.
+                    </p>
+                </div>
+                <div class="experience-card">
+                    <h3>Software Developer</h3>
+                    <p>2019 - 2020</p>
+                    <p>Designed and developed software applications using Python, PHP, and JavaScript. Conducted
+                        thorough testing and debugging to ensure optimal performance and user satisfaction.
+                    </p>
+                </div>
+                <div class="experience-card">
+                    <h3>Database Engineer</h3>
+                    <p>2018 - 2019</p>
+                    <p>Managed and maintained relational databases using MySQL. Designed and implemented database
+                        structures to optimize data storage and retrieval.
+                    </p>
+                </div>
+                <div class="experience-card">
+                    <h3>Prompt Engineer</h3>
+                    <p>2017 - 2018</p>
+                    <p>Provided prompt and efficient technical support to clients, resolving issues and ensuring
+                        customer satisfaction. Collaborated with the technical team to improve service delivery and
+                        response times.
+                    </p>
+                </div>
+            </div>
+        </section>
+
         <section class="skills" id="skills">
-            <div class="skill-card">
-                <h3>HTML5</h3>
-                <p>Developing structured and semantic web pages with modern HTML5 elements, ensuring accessibility,
-                    performance, and responsiveness for a seamless user experience.</p>
-            </div>
-            <div class="skill-card">
-                <h3>CSS3</h3>
-                <p>Designing visually appealing and responsive web interfaces with CSS3, leveraging modern techniques
-                    such as Flexbox, Grid, animations, and transitions for an enhanced user experience.</p>
-            </div>
-            <div class="skill-card">
-                <h3>JavaScript</h3>
-                <p>Implementing dynamic and interactive functionalities on web pages using JavaScript, including DOM
-                    manipulation, event handling, and asynchronous operations for smooth performance.</p>
-            </div>
-            <div class="skill-card">
-                <h3>Bootstrap Framework</h3>
-                <p>Rapidly developing responsive and mobile-first websites using Bootstrap’s prebuilt components, grid
-                    system, and customization options to create consistent and professional designs.</p>
-            </div>
-            <div class="skill-card">
-                <h3>Django</h3>
-                <p>Building robust, scalable, and secure web applications using Django, a high-level Python web
-                    framework that promotes clean code, modularity, and rapid development.</p>
-            </div>
-            <div class="skill-card">
-                <h3>PHP</h3>
-                <p>Creating dynamic and interactive web applications using PHP, enabling efficient server-side
-                    scripting, database interactions, and backend logic for seamless functionality.</p>
-            </div>
-            <div class="skill-card">
-                <h3>Python</h3>
-                <p>Writing efficient, scalable, and versatile code with Python, applying it to web development,
-                    automation, data analysis, and artificial intelligence applications.</p>
-            </div>
-            <div class="skill-card">
-                <h3>MySQL</h3>
-                <p>Designing and managing relational databases using MySQL, ensuring data integrity, optimized queries,
-                    and seamless integration with web applications for efficient storage and retrieval.</p>
-            </div>
-            <div class="skill-card">
-                <h3>AJAX</h3>
-                <p>Enhancing web applications with AJAX (Asynchronous JavaScript and XML), allowing real-time data
-                    updates and smooth interactions without requiring full-page reloads.</p>
-            </div>
-            <div class="skill-card">
-                <h3>MS Excel</h3>
-                <p>Leveraging Microsoft Excel for data analysis, visualization, and automation using formulas, pivot
-                    tables, and advanced functions to streamline business operations and decision-making.</p>
+            <h2>Skills</h2>
+            <div class="swiper">
+                <div class="swiper-wrapper">
+                    <div class="swiper-slide1 skill-card">
+                        <h3>HTML5</h3>
+                        <p>Developing structured and semantic web pages...</p>
+                    </div>
+                    <div class="swiper-slide skill-card">
+                        <h3>CSS3</h3>
+                        <p>Designing visually appealing and responsive web interfaces...</p>
+                    </div>
+                    <div class="swiper-slide skill-card">
+                        <h3>JavaScript</h3>
+                        <p>Implementing dynamic and interactive functionalities...</p>
+                    </div>
+                    <div class="swiper-slide skill-card">
+                        <h3>Bootstrap</h3>
+                        <p>Rapidly developing responsive and mobile-first websites...</p>
+                    </div>
+                    <div class="swiper-slide skill-card">
+                        <h3>Django</h3>
+                        <p>Building robust, scalable, and secure web applications...</p>
+                    </div>
+                    <div class="swiper-slide skill-card">
+                        <h3>PHP</h3>
+                        <p>Creating dynamic and interactive web applications...</p>
+                    </div>
+                    <div class="swiper-slide skill-card">
+                        <h3>Python</h3>
+                        <p>Writing efficient, scalable, and versatile code...</p>
+                    </div>
+                    <div class="swiper-slide skill-card">
+                        <h3>MySQL</h3>
+                        <p>Designing and managing relational databases...</p>
+                    </div>
+                    <div class="swiper-slide skill-card">
+                        <h3>AJAX</h3>
+                        <p>Enhancing web applications with AJAX...</p>
+                    </div>
+                    <div class="swiper-slide skill-card">
+                        <h3>MS Excel</h3>
+                        <p>Leveraging Microsoft Excel for data analysis...</p>
+                    </div>
+                    </div>
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
             </div>
         </section>
 
@@ -125,8 +214,10 @@
                     <img class="project-image" src="img.jpg" alt="Project 2">
                     <div class="project-details">
                         <h3 class="project-title">Social Media System</h3>
-                        <p class="project-description">A Social Media System design with HTML, CSS, JavaScript, PHP, Ajax, and MySQL
-                            where users can register and log-in to their profile, Search a user by either the useeeers username or phone number and chat with the user.</p>
+                        <p class="project-description">A Social Media System design with HTML, CSS, JavaScript, PHP,
+                            Ajax, and MySQL
+                            where users can register and log-in to their profile, Search a user by either the useeeers
+                            username or phone number and chat with the user.</p>
                         <div class="project-links">
                             <a href="#" target="_blank">Live Demo</a> <a href="github.com/ProfHezzy/SocialMediaSystem"
                                 target="_blank">GitHub Repo</a>
@@ -138,9 +229,11 @@
                     <img class="project-image" src="portfolio.png" alt="Project 3">
                     <div class="project-details">
                         <h3 class="project-title">Portfolio</h3>
-                        <p class="project-description">A Simple landing page Portfolio with scoll effect using HTML, CSS and JavaScript.</p>
+                        <p class="project-description">A Simple landing page Portfolio with scoll effect using HTML, CSS
+                            and JavaScript.</p>
                         <div class="project-links">
-                            <a href="https://profhezzy.github.io/hezekiahonline" target="_blank">Live Demo</a> <a href="#" target="_blank">GitHub Repo</a>
+                            <a href="https://profhezzy.github.io/hezekiahonline" target="_blank">Live Demo</a> <a
+                                href="#" target="_blank">GitHub Repo</a>
                         </div>
                     </div>
                 </div>
@@ -149,7 +242,9 @@
                     <img class="project-image" src="watch.png" alt="Project 1">
                     <div class="project-details">
                         <h3 class="project-title">Interactive Stop Watch</h3>
-                        <p class="project-description">A fully functional stopwatch that allows users to start, pause, and reset the timer with precision also allow users to record multiple lap times while the stopwatch runs, ensuring accurate tracking of intervals using HTML, CSS and JavaScript.</p>
+                        <p class="project-description">A fully functional stopwatch that allows users to start, pause,
+                            and reset the timer with precision also allow users to record multiple lap times while the
+                            stopwatch runs, ensuring accurate tracking of intervals using HTML, CSS and JavaScript.</p>
                         <div class="project-links">
                             <a href="#" target="_blank">Live Demo</a> <a href="#" target="_blank">GitHub Repo</a>
                         </div>
@@ -160,7 +255,10 @@
                     <img class="project-image" src="tiktaktoe.png" alt="Project 2">
                     <div class="project-details">
                         <h3 class="project-title">Tic-tac-Toe Game</h3>
-                        <p class="project-description">A fully interactive game that allows players to compete against each other or challenge an AI opponent. I implemented an unbeatable AI using the Minimax Algorithm, ensuring the AI always makes the best possible move. The game intelligently detects a win, loss, or draw and displays appropriate messages.</p>
+                        <p class="project-description">A fully interactive game that allows players to compete against
+                            each other or challenge an AI opponent. I implemented an unbeatable AI using the Minimax
+                            Algorithm, ensuring the AI always makes the best possible move. The game intelligently
+                            detects a win, loss, or draw and displays appropriate messages.</p>
                         <div class="project-links">
                             <a href="#" target="_blank">Live Demo</a> <a href="#" target="_blank">GitHub Repo</a>
                         </div>
@@ -170,11 +268,12 @@
                 <div class="project-card">
                     <img class="project-image" src="project3.jpg" alt="Project 3">
                     <div class="project-details">
-                        <h3 class="project-title">Project Title 3</h3>
-                        <p class="project-description">Short description of project 3. Focus on the impact and results.
+                        <h3 class="project-title">Weather System</h3>
+                        <p class="project-description">A responsive Weather system users can check for curent Weather
+                            information by searching for the desired location .
                         </p>
                         <div class="project-links">
-                            <a href="#" target="_blank">Live Demo</a> <a href="#" target="_blank">GitHub Repo</a>
+                            <a href="https://profhezzy.github.io/CODECRAFT_WD_05" target="_blank">Live Demo</a> <a href="#" target="_blank">GitHub Repo</a>
                         </div>
                     </div>
                 </div>
@@ -213,7 +312,9 @@
         </div>
     </footer>
 
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
     <script src="script.js"></script>
+
 </body>
 
 </html>
